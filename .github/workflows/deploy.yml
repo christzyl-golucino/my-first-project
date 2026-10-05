@@ -1,0 +1,29 @@
+name: CI/CD Web Deployment #name of the workflow
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v5
+
+      - name: Setup Github Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "."
+
+      - name: Deploy to Github Pages
+        uses: actions/deploy-pages@v4
