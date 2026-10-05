@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+    font-weight: 400;
 }
 
 body {
@@ -160,4 +161,4 @@ footer {
     font-size: 0.85rem;
     margin-top: 4rem;
 }
-
+}
